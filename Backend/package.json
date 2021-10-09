@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Payment backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js",
+    "ngrok": "ngrok http 5000"
+  },
+  "author": "Biplab Mazumdar",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "firebase-admin": "^9.11.1",
+    "razorpay": "^2.0.6",
+    "shortid": "^2.2.16"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "ngrok": "^4.2.2"
+  }
+}

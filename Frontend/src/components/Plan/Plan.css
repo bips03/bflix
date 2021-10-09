@@ -1,0 +1,40 @@
+.plan{
+    display: flex;
+    padding : 10px;
+    justify-content: space-between;
+    margin : 1px;
+}
+.plan:hover{
+    transform: scale(1.02);
+    transition : all 0.3s;
+    background-color: red;
+    color : #fff;
+}
+.plan:hover > button {
+   background-color: whitesmoke;
+   color: red;
+   transition: all 0.3s;
+   
+}
+.plan_left{
+    text-align: left;
+}
+.plan_right{
+    border : none;
+    border-radius: 0px;
+    color : #fff;
+    background-color: red;
+    font-weight: 600;
+    padding : 4px;
+    margin : 2px;
+    padding-left: 16px;
+    padding-right : 16px;
+}
+.plan_right:hover{
+    cursor: pointer;
+}
+.deactivated_plan{
+    background-color: gray !important;
+    color: black !important;
+    cursor: default !important;
+}

@@ -1,0 +1,52 @@
+.loginBox_content{
+   background : rgba(0, 0, 0, 0.85);
+}
+.box_content > h1{
+    font-weight: 500;
+    font-size: 1.75rem;
+}
+.box_content{
+    display: flex;
+    flex-direction: column;
+    margin : 10px auto; 
+}
+.box_content > h1 {
+    margin-bottom: 10px;
+}
+.box_email,.box_pw,.box_btn{
+    width: 350px;
+    margin : 5px auto;
+    padding : 5px 10px;
+    border-radius: 5px;
+    border : none;
+    outline-width: 0;
+    height : 35px;
+}
+.box_btn{
+    font-weight: 600;
+    color : #fff;
+    background-color: #e50914;
+}
+.box_btn:hover{
+    transform: scale(1.03);
+    transition : all 300ms;
+}
+.span_link:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.box_link{
+    width : 100%;
+    height: 5px;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+@media screen and (max-width:700px) {
+    .box_email,.box_pw,.box_btn{
+        width : 100%;
+        margin : 5px 5px;
+    }
+    .loginBox_content{
+        padding : 0px 30px !important;
+    }
+}

@@ -1,0 +1,9 @@
+.alert{
+    width: 100%;
+    padding : 5px 10px;
+    margin: 5px auto;
+    background : #e50914;
+    font-weight: 400;
+    font-size: medium;
+    text-align: center;
+}

@@ -1,0 +1,94 @@
+.dialog {
+    position: absolute;
+    background-color: black;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    outline: none;
+    width: 60vw;
+    height: 500px;
+    display: flex;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  }
+  .dialog_content {
+    color: #fff;
+    flex: 0.6;
+    display: flex;
+    flex-direction: column;
+  }
+  .dialog_content_header {
+    padding: 15px 0px;
+    margin: 0px 30px;
+    font-weight: 700;
+    border-bottom: 1px solid #fff;
+    text-decoration: underline;
+  }
+  .dialog_content_body {
+    padding: 10px 0px;
+    margin: 0px 30px;
+    height: 100%;
+  }
+  .dialog_about {
+    border-bottom: 1px solid #fff;
+    width: fit-content;
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .dialog_desc{
+    display: flex;
+    flex-direction: column;
+    padding : 10px 0px;
+    font-weight: 500;
+    font-size: 18px;
+    justify-content: space-between;
+    height: calc(100% - 20px);
+   
+  }
+  .dialog_overview{
+    max-height: 220px;
+    padding-right: 5px;
+    overflow-y: auto;
+  }
+  .dialog_img {
+    position: relative;
+    flex: 0.4;
+    position: relative;
+    justify-content: flex-end;
+    height: 500px;
+    width: 0.4;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 500px;
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
+  }
+  
+  @media screen and (max-width:1028px) {
+    .dialog{
+      width: 80vw;
+    }
+    .dialog_content_header > h1{
+      font-size: 26px !important;
+    }
+    .dialog_content_header > h3{
+      font-size: 23px !important;
+    }
+  }
+  @media screen and (max-width:768px) {
+    .dialog{
+      width: 95vw;
+    }
+    .dialog_content_header > h1{
+      font-size: 26px !important;
+    }
+    .dialog_content_header > h3{
+      font-size: 23px !important;
+    }
+    .dialog_overview{
+        max-height: 210px;
+    }
+  }

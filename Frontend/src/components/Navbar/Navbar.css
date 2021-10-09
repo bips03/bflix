@@ -1,0 +1,32 @@
+.navb{
+    position: fixed ;
+    width : 100%;
+    height: 70px;
+    padding : 10px;
+    top : 0;
+    z-index: 1;
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
+}
+.nav_bg{
+    background-color: #111;
+}
+.nav_contents{
+    display : flex;
+    justify-content: space-between;
+}
+.nav_logo{
+    position: fixed;
+    width :80px;
+    height: 50px;
+    cursor: pointer;
+    object-fit: contain;
+}
+.nav_avatar{
+    position: fixed;
+    right : 5px;
+    width : 35px;
+    margin : calc((50px - 35px)/2);
+    cursor: pointer;
+    object-fit: contain;
+}

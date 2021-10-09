@@ -1,0 +1,20 @@
+.plans{
+    display: flex;
+    flex-direction: column;
+    padding : 3px;
+}
+.plans > h4 {
+    font-weight: 500;
+    border-bottom: 1px solid #282c2d;
+    margin-bottom: 8px;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    text-align:left;
+}
+.plans_span{
+   
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: underline;
+    padding-right: 5px;
+}

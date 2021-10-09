@@ -1,0 +1,26 @@
+.payment{
+    height : 100vh;
+    background-color: #fff;
+    color : #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.payment_content{
+    width : 400px;
+}
+.payment_btn{
+    font-size: 15px;
+    border: none;
+    color : #fff;
+    background-color: red;
+    padding : 12px;
+    margin-top: 5px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.payment_btn:hover{
+    color :#fff;
+    background-color: black;
+}
