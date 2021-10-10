@@ -4,7 +4,8 @@
   "description": "Payment backend",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "check": "cd Frontend && npm install --only=dev && npm install && npm run build",
     "server": "nodemon index.js",
     "ngrok": "ngrok http 5000"
   },
@@ -15,6 +16,9 @@
     "firebase-admin": "^9.11.1",
     "razorpay": "^2.0.6",
     "shortid": "^2.2.16"
+  },
+  "engines": {
+    "node": "16.4.0"
   },
   "devDependencies": {
     "cors": "^2.8.5",
