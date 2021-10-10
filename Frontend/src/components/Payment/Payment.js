@@ -31,11 +31,11 @@ function Payment() {
 
   return loading ? (
     <Loading />
-  ) : payment ? (
+  ) : Object.keys(payment).length>2 ? (
     <Redirect to="/" />
   ) : (
     <div className="payment">
-      {console.log(payment)}
+  
       <Navbar showIcon={false} />
       <div className="payment_content">
         {error && <Alert msg={error} />}

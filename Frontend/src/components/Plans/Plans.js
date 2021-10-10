@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {  useSelector } from "react-redux";
 import "./Plans.css";
 import Plan from "../Plan/Plan";
@@ -11,8 +11,6 @@ function Plans({ setError }) {
   ];
 
   const user = useSelector((state) => state.user);
-
-  useEffect(() => console.log('loaded'),[])
 
   const loadRazor = (scriptUrl) => {
     return new Promise((res, rej) => {
@@ -33,7 +31,7 @@ function Plans({ setError }) {
       await loadRazor("https://checkout.razorpay.com/v1/checkout.js");
 
       // making the payment via backend
-      const response = await fetch("http://localhost:5000/razorpay", {
+      const response = await fetch("/razorpay", {
         method: "POST",
         headers: {
           "Content-type": "application/json",

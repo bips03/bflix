@@ -4,6 +4,7 @@ import "./Plan.css";
 
 function Plan({ plan, onClick }) {
   const payment = useSelector((state) => state.payment);
+  const check = Object.keys(payment).length>2 && plan.id === payment.planid
   return (
     <div className="plan">
       <div className="plan_left">
@@ -13,11 +14,11 @@ function Plan({ plan, onClick }) {
       <button
         onClick={() => onClick(plan.id)}
         className={`plan_right ${
-         payment && plan.id === payment.planid && "deactivated_plan"
+         check && "deactivated_plan"
         }`}
-        disabled={payment}
+        disabled={check}
       >
-        {payment && plan.id === payment.planid ? "Bought" : "Buy"}
+        { check? "Bought" : "Buy"}
       </button>
     </div>
   );

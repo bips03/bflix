@@ -3,6 +3,7 @@ const shortid = require("shortid");
 const Razorpay = require("razorpay");
 const crypto = require("crypto");
 const cors = require("cors");
+const path = require('path')
 const { urlencoded } = require("express");
 const admin = require("firebase-admin");
 require("dotenv").config();
@@ -121,7 +122,12 @@ app.post("/razorpay", async (req, res) => {
   }
 });
 
-const port = 5000 || process.env.PORT;
+app.use(express.static(path.join(__dirname, '../build')))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'))
+})
+
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
   console.log("Listening on port " + port);
