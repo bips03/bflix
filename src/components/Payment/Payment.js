@@ -19,7 +19,7 @@ function Payment() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 700);
   }, []);
 
   const logoutUser = () => {
@@ -28,7 +28,6 @@ function Payment() {
     history.push('/')
   };
 
-  useEffect(() => console.log("loaded payment"), []);
 
   return loading ? (
     <Loading />

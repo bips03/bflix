@@ -14,11 +14,11 @@ app.use(urlencoded({ extended: true }));
 const serviceAccount = {
   type: "service_account",
   project_id: "bflixdot",
-  private_key_id: "140a2f43057ef7bcc2ec75862a1bd9b5dd2c1ee9",
+  private_key_id: process.env.FIREBASE_PRIVATEKEY,
   private_key:
     "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCjXU+NDs0B2Kul\nyw5jvlPWz7KyAt6Fu8d5aSTfB5c1237eFGGpTgj+l79phW5LXOeKs9in4eIZN6BN\n6lxh5QOjwNc2ueC2iluMp2De24qPnFdzEfIWBWe0UvaBzzHf3mOgJ1j0IW41cArw\nUkURnEs8UbuSjKhJDskdcVtw0bU+CjGQMnfAZ40e5W5cqlb0TyTLhwUpQBzu0MCO\n6vKKU4CuSKioq6I5z/7F8+Qp7nIHONWjpcL2g/38ksJUcEswH1+C/bQxhg0gB0wy\nPm613lxqlDLrljgH/wJxho5z3+XEdtI4ztlv08a8/E72yMBP0phUmSu+IMRz3LGf\nrEValjozAgMBAAECggEAON9RxAI8laF4NEpKMqg+aMC67aT5EearDZXwq6JpXmsR\nMkA3NalAkV2D2jkFCkCILS3qRZvqSiwm5ykpSz1etIH8ioVQeUwWjhNxMnSMuu1L\nNnivZkIwdcMSJWPb8Ztq5IT+P1NqGjls3XhOqlBWkuPDYMQODA0VL+ZYVqDzL2rv\nf0wH/cKmQo0aiCyzpY5TD7gz4lTjncYYYyFkuDvNCwYvDnM6yUNXfIBKhdVJXnrM\nC6dDlhAiCKadLas/sr4JAOPOeI6xSYVw0BPo6iII3l0NaQMsNzBBo2S4n2sN3BcN\n+r8RvWDjhdbdQp+Y3h/WV/eajzT/g1jUXsoice20DQKBgQDXD+3rryRIFX868U4r\nomh8oixaMjAqdXvY+5tsgbBa833BR6xRgXf5puy95QHsePAwv9ZQ0gWiuZNu/1+o\ndM5hL9qidJAi1SCLFzMO74Ej0vRtYFw2PD7WoE6kwI6SZNviuuwMLVA9Egp5E7cf\n9gv23ITtNe6kRPur6zc/1jArjQKBgQDCdiE40dffe924VtdA/UP52fpRFVZsYGoP\nFe+VuV7IordyWSJapnfdznknjuWVz6y1LUofM/bP/YqKGgj5Pc1I/2U1shBQI10U\n06bg2UbaZGdXSoMCoLWZC+zjIRuTnr5c//g3VqXAAAwhJfMsl66xOYlz5JhytKJQ\nfOHYkq+svwKBgHZ/6XnWzGgHqE5DDe6PE4GxHj0osE+E4pPht3cnUpQa3Gz2YCWc\n8A2Yg5Pyroes77P80EtCHibWmD0t63h3vAvjAVZIYe8/fioFw3V0VLT3lQT7dnPP\n6FP8irjO/P//IQWiN1RSV4b+/NRQH7Q1r8v7ICdQc0kCVaYZ+hxrmak1AoGBAK2V\nj2BOCPoocqnrcuhDa9trFcQtXOEPS3094ojvWMmWXlTHdiAfOx6XAZUrPIt3Pz7X\nN7QUybuuIm3Wga4i2c3QlQLSeTdf6eX+bJeHvHSUbZ8BF2NQG+qLN6Ej257xdBJG\nN8cGJJz4LdulKaXjnH/80VLPernhvoZEg8G0Zva3AoGBAIJ7K1yj+2odtsYOu2ta\nbIsAYu3XqgRLD2Bl0KL5Wz+Fdhuei5FZMsp/ilUcv75xJbQfaThfm4Vy6HU13h8w\ncX1VqCMbG/wmy3lYt0HNUNUv7y8E+j1V5jWZP24W1bsfDo60s8LjvZErA0UZG58O\n5gPOkYJHLhSKLoTJFD1laoQe\n-----END PRIVATE KEY-----\n",
   client_email: "firebase-adminsdk-9k149@bflixdot.iam.gserviceaccount.com",
-  client_id: "101209707476848543644",
+  client_id: process.env.FIREBASE_CLIENTKEY,
   auth_uri: "https://accounts.google.com/o/oauth2/auth",
   token_uri: "https://oauth2.googleapis.com/token",
   auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
@@ -41,7 +41,7 @@ const plans = [
 
 var instance = new Razorpay({
   key_id: "rzp_test_6GB0TI3RDdxRbo",
-  key_secret: "lihofpGH6w5un2LOiou1I38O",
+  key_secret: process.env.RAZOR_KEY,
 });
 
 const paymentsRef = db.collection("payments");
@@ -117,8 +117,7 @@ app.post("/razorpay", async (req, res) => {
       description: currentPlan.description,
     });
   } catch (error) {
-    // res.status(500).json({ error: error.message });
-    console.log(error.message);
+    res.status(500).json({ error: error.message });
   }
 });
 
