@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "check": "npm install && cd Frontend && npm install && npm run build",
     "server": "nodemon index.js",
     "ngrok": "ngrok http 5000"
   },

@@ -47,6 +47,8 @@ var instance = new Razorpay({
 
 const paymentsRef = db.collection("payments");
 
+app.get('/',(req,res) => res.send('hello'))
+
 app.post("/verification", async (req, res) => {
   // after the payment the razorpay server sends a response with details to our api end point
   const secret = "biplab@razorpay";
@@ -122,10 +124,10 @@ app.post("/razorpay", async (req, res) => {
   }
 });
 
-app.use(express.static(path.join(__dirname, '../build')))
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../build/index.html'))
-})
+// app.use(express.static(path.join(__dirname, '../build')))
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../build/index.html'))
+// })
 
 const port = process.env.PORT || 5000;
 
