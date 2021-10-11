@@ -47,8 +47,6 @@ var instance = new Razorpay({
 
 const paymentsRef = db.collection("payments");
 
-app.get('/',(req,res) => res.send('hello'))
-
 app.post("/verification", async (req, res) => {
   // after the payment the razorpay server sends a response with details to our api end point
   const secret = "biplab@razorpay";
