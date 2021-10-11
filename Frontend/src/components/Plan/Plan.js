@@ -4,7 +4,7 @@ import "./Plan.css";
 
 function Plan({ plan, onClick }) {
   const payment = useSelector((state) => state.payment);
-  const check = Object.keys(payment).length>2 && plan.id === payment.planid
+  const check = Object.keys(payment? payment : {}).length>2 && plan.id === payment.planid
   return (
     <div className="plan">
       <div className="plan_left">

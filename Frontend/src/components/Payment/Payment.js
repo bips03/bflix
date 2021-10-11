@@ -15,6 +15,7 @@ function Payment() {
   const dispatch = useDispatch();
   const history = useHistory()
   const payment = useSelector((state) => state.payment);
+  
 
   useEffect(() => {
     setTimeout(() => {
@@ -31,7 +32,7 @@ function Payment() {
 
   return loading ? (
     <Loading />
-  ) : Object.keys(payment).length>2 ? (
+  ) : Object.keys(payment? payment : {}).length>2?(
     <Redirect to="/" />
   ) : (
     <div className="payment">
