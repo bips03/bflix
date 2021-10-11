@@ -14,13 +14,13 @@
     "express": "^4.17.1",
     "firebase-admin": "^9.11.1",
     "razorpay": "^2.0.6",
+    "cors": "^2.8.5",
     "shortid": "^2.2.16"
   },
   "engines": {
     "node": "16.4.0"
   },
   "devDependencies": {
-    "cors": "^2.8.5",
     "ngrok": "^4.2.2",
     "dotenv": "^10.0.0"
   }
