@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "heroku-postbuild" : "cd Frontend && npm install && npm run build",
     "server": "nodemon index.js",
     "ngrok": "ngrok http 5000"
   },
