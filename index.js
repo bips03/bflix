@@ -3,7 +3,7 @@ const shortid = require("shortid");
 const Razorpay = require("razorpay");
 const crypto = require("crypto");
 const cors = require("cors");
-const path = require('path')
+const path = require("path");
 const { urlencoded } = require("express");
 const admin = require("firebase-admin");
 require("dotenv").config();
@@ -79,7 +79,7 @@ app.post("/verification", async (req, res) => {
       }
     );
 
-    res.status({ status: "ok" });
+    res.status(200).json({ status: "ok" });
   } else {
     res.status(501).json({ msg: "wrong server requesting payment" });
   }
@@ -122,10 +122,10 @@ app.post("/razorpay", async (req, res) => {
   }
 });
 
-app.use(express.static(path.join(__dirname, 'Frontend/build')))
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'Frontend/build/index.html'))
-})
+app.use(express.static(path.join(__dirname, "Frontend/build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "Frontend/build/index.html"));
+});
 
 const port = process.env.PORT || 5000;
 
